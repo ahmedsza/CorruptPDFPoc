@@ -1,0 +1,208 @@
+﻿@page
+@model UploadAPI.PDFUploadModel
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Files</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <style>
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .file-list {
+            margin: 20px 0;
+        }
+
+        .file-item {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            padding: 5px;
+        }
+
+        .status {
+            margin-left: 10px;
+            font-weight: bold;
+        }
+
+        .valid {
+            color: green;
+        }
+
+        .invalid {
+            color: red;
+        }
+
+        .not-pdf {
+            color: orange;
+        }
+
+        .progress {
+            width: 100%;
+            background-color: #f3f3f3;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-left: 10px;
+            display: none; /* Hide progress bars initially */
+        }
+
+        .progress-bar {
+            height: 20px;
+            background-color: #4caf50;
+            width: 0;
+        }
+
+        #status {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>PDF File Upload with Validation</h2>
+        <form id="uploadForm" action="https://localhost:7227/api/upload" method="post" enctype="multipart/form-data">
+            <input type="file" name="files" id="fileInput" multiple accept=".pdf" />
+            <div id="fileList" class="file-list"></div>
+            <button type="submit" id="submitBtn" disabled>Upload</button>
+        </form>
+        <div id="status"></div>
+    </div>
+
+    <script>
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+        async function validatePDF(file) {
+            let loadingTask = null;
+            try {
+                const arrayBuffer = await file.arrayBuffer();
+                loadingTask = pdfjsLib.getDocument({data: arrayBuffer});
+                const pdf = await loadingTask.promise;
+
+                if (pdf.numPages < 1) {
+                    throw new Error('No pages found');
+                }
+
+                const page = await pdf.getPage(1);
+                await page.getOperatorList();
+                return true;
+            } catch (error) {
+                console.error(`Validation failed for ${file.name}:`, error);
+                return false;
+            } finally {
+                if (loadingTask) {
+                    await loadingTask.destroy();
+                }
+            }
+        }
+
+        function updateFileList() {
+            const fileList = document.getElementById('fileList');
+            fileList.innerHTML = '';
+            const files = fileInput.files;
+
+            Array.from(files).forEach(file => {
+                const item = document.createElement('div');
+                item.className = 'file-item';
+                item.innerHTML = `
+                    <span>${file.name}</span>
+                    <span class="status" id="status-${file.name}">Pending...</span>
+                    <div class="progress">
+                        <div class="progress-bar" id="progress-${file.name}"></div>
+                    </div>
+                `;
+                fileList.appendChild(item);
+            });
+
+            document.getElementById('submitBtn').disabled = files.length === 0;
+        }
+
+        async function validateFiles() {
+            const files = fileInput.files;
+            let allValid = true;
+
+            for (const file of Array.from(files)) {
+                const statusElement = document.getElementById(`status-${file.name}`);
+                if (file.type !== 'application/pdf') {
+                    statusElement.textContent = 'Not a PDF - not validated';
+                    statusElement.className = 'status not-pdf';
+                    continue;
+                }
+
+                const isValid = await validatePDF(file);
+
+                statusElement.textContent = isValid ? '✓' : '✗';
+                statusElement.className = `status ${isValid ? 'valid' : 'invalid'}`;
+
+                if (!isValid) allValid = false;
+            }
+
+            document.getElementById('submitBtn').disabled = !allValid;
+            document.getElementById('status').innerHTML = allValid ?
+                '<p style="color: green;">All PDF files are valid</p>' :
+                '<p style="color: red;">Some PDF files are corrupt. Please remove them before uploading.</p>';
+        }
+
+        async function uploadFile(file) {
+            return new Promise((resolve, reject) => {
+                const xhr = new XMLHttpRequest();
+                xhr.open('POST', 'https://localhost:7227/api/upload', true);
+
+                xhr.upload.onprogress = (event) => {
+                    if (event.lengthComputable) {
+                        const percentComplete = (event.loaded / event.total) * 100;
+                        const progressBar = document.getElementById(`progress-${file.name}`);
+                        progressBar.style.width = `${percentComplete}%`;
+                    }
+                };
+
+                xhr.onload = () => {
+                    if (xhr.status === 200) {
+                        resolve();
+                    } else {
+                        reject(new Error('Upload failed'));
+                    }
+                };
+
+                xhr.onerror = () => reject(new Error('Upload failed'));
+
+                const formData = new FormData();
+                formData.append('files', file);
+                xhr.send(formData);
+            });
+        }
+
+        const fileInput = document.getElementById('fileInput');
+        fileInput.addEventListener('change', async () => {
+            updateFileList();
+            await validateFiles();
+        });
+
+        document.getElementById('uploadForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const files = fileInput.files;
+            const statusElement = document.getElementById('status');
+            statusElement.innerHTML = '';
+
+            // Show progress bars when upload starts
+            Array.from(files).forEach(file => {
+                const progressBarContainer = document.getElementById(`progress-${file.name}`).parentElement;
+                progressBarContainer.style.display = 'block';
+            });
+
+            try {
+                for (const file of Array.from(files)) {
+                    await uploadFile(file);
+                }
+                statusElement.innerHTML = '<p style="color: green;">All files uploaded successfully!</p>';
+            } catch (error) {
+                statusElement.innerHTML = `<p style="color: red;">${error.message}</p>`;
+            }
+        });
+    </script>
+
+</body>
+</html>

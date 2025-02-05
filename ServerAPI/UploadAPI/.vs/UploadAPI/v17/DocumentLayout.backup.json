@@ -1,0 +1,188 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\PlayArea\\Transnet\\CorruptPDF\\ServerAPI\\UploadAPI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F1EB9ADA-05D6-4FF5-8368-F7F0F6044C1B}|UploadAPI.csproj|d:\\playarea\\transnet\\corruptpdf\\serverapi\\uploadapi\\pages\\pdfupload.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F1EB9ADA-05D6-4FF5-8368-F7F0F6044C1B}|UploadAPI.csproj|solutionrelative:pages\\pdfupload.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1EB9ADA-05D6-4FF5-8368-F7F0F6044C1B}|UploadAPI.csproj|d:\\playarea\\transnet\\corruptpdf\\serverapi\\uploadapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F1EB9ADA-05D6-4FF5-8368-F7F0F6044C1B}|UploadAPI.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1EB9ADA-05D6-4FF5-8368-F7F0F6044C1B}|UploadAPI.csproj|d:\\playarea\\transnet\\corruptpdf\\serverapi\\uploadapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F1EB9ADA-05D6-4FF5-8368-F7F0F6044C1B}|UploadAPI.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1EB9ADA-05D6-4FF5-8368-F7F0F6044C1B}|UploadAPI.csproj|d:\\playarea\\transnet\\corruptpdf\\serverapi\\uploadapi\\pages\\pdfupload.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1EB9ADA-05D6-4FF5-8368-F7F0F6044C1B}|UploadAPI.csproj|solutionrelative:pages\\pdfupload.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1EB9ADA-05D6-4FF5-8368-F7F0F6044C1B}|UploadAPI.csproj|d:\\playarea\\transnet\\corruptpdf\\serverapi\\uploadapi\\controllers\\uploadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1EB9ADA-05D6-4FF5-8368-F7F0F6044C1B}|UploadAPI.csproj|solutionrelative:controllers\\uploadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ahmeds.AFRICA\\AppData\\Local\\SourceServer\\de20f5c4c731243186ff5440cdbe00405a2224de1dab45f7846fbfd317dbc2eb\\src\\DefaultBuilder\\src\\WebApplicationBuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1EB9ADA-05D6-4FF5-8368-F7F0F6044C1B}|UploadAPI.csproj|d:\\playarea\\transnet\\corruptpdf\\serverapi\\uploadapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1EB9ADA-05D6-4FF5-8368-F7F0F6044C1B}|UploadAPI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 12,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1350105739:0:{83107a3e-496a-485e-b455-16ddb978e55e}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1070669760:0:{83107a3e-496a-485e-b455-16ddb978e55e}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:2:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1943261329:0:{83107a3e-496a-485e-b455-16ddb978e55e}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:405473291:0:{83107a3e-496a-485e-b455-16ddb978e55e}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1135065633:0:{83107a3e-496a-485e-b455-16ddb978e55e}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{a7673ab8-96c2-4f8f-86b9-ef4527b5383a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PDFUpload.cshtml.cs",
+              "DocumentMoniker": "D:\\PlayArea\\Transnet\\CorruptPDF\\ServerAPI\\UploadAPI\\Pages\\PDFUpload.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\PDFUpload.cshtml.cs",
+              "ToolTip": "D:\\PlayArea\\Transnet\\CorruptPDF\\ServerAPI\\UploadAPI\\Pages\\PDFUpload.cshtml.cs",
+              "RelativeToolTip": "Pages\\PDFUpload.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-04T08:58:13.839Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PDFUpload.cshtml",
+              "DocumentMoniker": "D:\\PlayArea\\Transnet\\CorruptPDF\\ServerAPI\\UploadAPI\\Pages\\PDFUpload.cshtml",
+              "RelativeDocumentMoniker": "Pages\\PDFUpload.cshtml",
+              "ToolTip": "D:\\PlayArea\\Transnet\\CorruptPDF\\ServerAPI\\UploadAPI\\Pages\\PDFUpload.cshtml*",
+              "RelativeToolTip": "Pages\\PDFUpload.cshtml*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-04T08:43:53.665Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{269a02dc-6af8-11d3-bdc4-00c04f688e50}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\PlayArea\\Transnet\\CorruptPDF\\ServerAPI\\UploadAPI\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "D:\\PlayArea\\Transnet\\CorruptPDF\\ServerAPI\\UploadAPI\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-04T08:53:56.847Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UploadController.cs",
+              "DocumentMoniker": "D:\\PlayArea\\Transnet\\CorruptPDF\\ServerAPI\\UploadAPI\\Controllers\\UploadController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UploadController.cs",
+              "ToolTip": "D:\\PlayArea\\Transnet\\CorruptPDF\\ServerAPI\\UploadAPI\\Controllers\\UploadController.cs",
+              "RelativeToolTip": "Controllers\\UploadController.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAwwDIAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-03T14:47:29.076Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "D:\\PlayArea\\Transnet\\CorruptPDF\\ServerAPI\\UploadAPI\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "D:\\PlayArea\\Transnet\\CorruptPDF\\ServerAPI\\UploadAPI\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAAA8AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-04T09:12:57.872Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "WebApplicationBuilder.cs",
+              "DocumentMoniker": "C:\\Users\\ahmeds.AFRICA\\AppData\\Local\\SourceServer\\de20f5c4c731243186ff5440cdbe00405a2224de1dab45f7846fbfd317dbc2eb\\src\\DefaultBuilder\\src\\WebApplicationBuilder.cs",
+              "ToolTip": "C:\\Users\\ahmeds.AFRICA\\AppData\\Local\\SourceServer\\de20f5c4c731243186ff5440cdbe00405a2224de1dab45f7846fbfd317dbc2eb\\src\\DefaultBuilder\\src\\WebApplicationBuilder.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAArwCcAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-04T08:59:11.415Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\PlayArea\\Transnet\\CorruptPDF\\ServerAPI\\UploadAPI\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\PlayArea\\Transnet\\CorruptPDF\\ServerAPI\\UploadAPI\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAAACwAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-03T15:00:22.995Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

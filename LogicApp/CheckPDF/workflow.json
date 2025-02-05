@@ -1,0 +1,250 @@
+{
+    "definition": {
+        "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+        "actions": {
+            "Initialize_variable": {
+                "type": "InitializeVariable",
+                "inputs": {
+                    "variables": [
+                        {
+                            "name": "fileextension",
+                            "type": "object",
+                            "value": "@triggerBody()"
+                        }
+                    ]
+                },
+                "runAfter": {}
+            },
+            "HTTP": {
+                "type": "Http",
+                "inputs": {
+                    "uri": "http://localhost:7074/api/checkpdf",
+                    "method": "POST",
+                    "headers": {
+                        "Content-Type": "application/octet-stream"
+                    },
+                    "body": "@body('Parse_JSON')?['content']?['$content']"
+                },
+                "runAfter": {
+                    "Initialize_variable_2": [
+                        "SUCCEEDED"
+                    ]
+                },
+                "runtimeConfiguration": {
+                    "contentTransfer": {
+                        "transferMode": "Chunked"
+                    }
+                }
+            },
+            "Parse_JSON": {
+                "type": "ParseJson",
+                "inputs": {
+                    "content": "@variables('fileextension')",
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "content": {
+                                "type": "object",
+                                "properties": {
+                                    "$content-type": {
+                                        "type": "string"
+                                    },
+                                    "$content": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "containerInfo": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "properties": {
+                                        "type": "object",
+                                        "properties": {
+                                            "lastModified": {
+                                                "type": "string"
+                                            },
+                                            "leaseStatus": {
+                                                "type": "string"
+                                            },
+                                            "leaseState": {
+                                                "type": "string"
+                                            },
+                                            "leaseDuration": {
+                                                "type": "string"
+                                            },
+                                            "publicAccess": {
+                                                "type": "string"
+                                            },
+                                            "hasImmutabilityPolicy": {
+                                                "type": "boolean"
+                                            },
+                                            "hasLegalHold": {
+                                                "type": "boolean"
+                                            },
+                                            "defaultEncryptionScope": {
+                                                "type": "string"
+                                            },
+                                            "preventEncryptionScopeOverride": {
+                                                "type": "boolean"
+                                            },
+                                            "eTag": {
+                                                "type": "object",
+                                                "properties": {}
+                                            },
+                                            "metadata": {
+                                                "type": "object",
+                                                "properties": {}
+                                            },
+                                            "hasImmutableStorageWithVersioning": {
+                                                "type": "boolean"
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "properties": {
+                                "type": "object",
+                                "properties": {
+                                    "blobName": {
+                                        "type": "string"
+                                    },
+                                    "blobPath": {
+                                        "type": "string"
+                                    },
+                                    "blobFullPathWithContainer": {
+                                        "type": "string"
+                                    },
+                                    "appendBlobCommittedBlockCount": {
+                                        "type": "integer"
+                                    },
+                                    "blobTierInferred": {
+                                        "type": "boolean"
+                                    },
+                                    "blobTierLastModifiedTime": {
+                                        "type": "string"
+                                    },
+                                    "blobType": {
+                                        "type": "string"
+                                    },
+                                    "contentMD5": {
+                                        "type": "string"
+                                    },
+                                    "contentType": {
+                                        "type": "string"
+                                    },
+                                    "created": {
+                                        "type": "string"
+                                    },
+                                    "creationTime": {
+                                        "type": "string"
+                                    },
+                                    "eTag": {
+                                        "type": "string"
+                                    },
+                                    "isIncrementalCopy": {
+                                        "type": "boolean"
+                                    },
+                                    "isServerEncrypted": {
+                                        "type": "boolean"
+                                    },
+                                    "lastModified": {
+                                        "type": "string"
+                                    },
+                                    "leaseDuration": {
+                                        "type": "string"
+                                    },
+                                    "leaseState": {
+                                        "type": "string"
+                                    },
+                                    "leaseStatus": {
+                                        "type": "string"
+                                    },
+                                    "length": {
+                                        "type": "integer"
+                                    },
+                                    "pageBlobSequenceNumber": {
+                                        "type": "integer"
+                                    },
+                                    "premiumPageBlobTier": {
+                                        "type": "string"
+                                    },
+                                    "standardBlobTier": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "metadata": {
+                                "type": "object",
+                                "properties": {}
+                            }
+                        }
+                    }
+                },
+                "runAfter": {
+                    "Initialize_variable_1": [
+                        "SUCCEEDED"
+                    ]
+                }
+            },
+            "Initialize_variable_1": {
+                "type": "InitializeVariable",
+                "inputs": {
+                    "variables": [
+                        {
+                            "name": "test",
+                            "type": "object",
+                            "value": "@triggerBody()"
+                        }
+                    ]
+                },
+                "runAfter": {
+                    "Initialize_variable": [
+                        "SUCCEEDED"
+                    ]
+                }
+            },
+            "Initialize_variable_2": {
+                "type": "InitializeVariable",
+                "inputs": {
+                    "variables": [
+                        {
+                            "name": "getcontent",
+                            "type": "string",
+                            "value": "@base64ToString(body('Parse_JSON')?['content']?['$content'])"
+                        }
+                    ]
+                },
+                "runAfter": {
+                    "Parse_JSON": [
+                        "SUCCEEDED"
+                    ]
+                }
+            }
+        },
+        "contentVersion": "1.0.0.0",
+        "outputs": {},
+        "triggers": {
+            "When_a_blob_is_added_or_updated": {
+                "type": "ServiceProvider",
+                "inputs": {
+                    "parameters": {
+                        "path": "tenderdocs"
+                    },
+                    "serviceProviderConfiguration": {
+                        "connectionName": "AzureBlob",
+                        "operationId": "whenABlobIsAddedOrModified",
+                        "serviceProviderId": "/serviceProviders/AzureBlob"
+                    }
+                },
+                "conditions": []
+            }
+        }
+    },
+    "kind": "Stateful"
+}

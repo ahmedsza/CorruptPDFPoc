@@ -1,0 +1,15 @@
+{
+     "AzureBlobStorage": {
+      "ConnectionString": "REPLACEWITHCONNECTIONSTRING",
+      "ContainerName": "CONTAINERNAME"
+    
+  },
+     
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*"
+}
